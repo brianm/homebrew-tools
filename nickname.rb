@@ -7,7 +7,7 @@ class Nickname < Formula
       :tag => "0.3.0"
   version "0.3.0"
   homepage "https://github.com/nickname/mdnsp"
-  sha1 ""
+  sha256 ""
 
   depends_on "go" => :build
   depends_on "godep" => :build
@@ -16,7 +16,7 @@ class Nickname < Formula
     ENV["GOPATH"] = buildpath
 
     my_path = buildpath/"src/github.com/brianm/nickname"
-    my_path.install Dir["*"]    
+    my_path.install Dir["*"]
 
     cd my_path do
       system "godep", "go", "build"

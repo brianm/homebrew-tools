@@ -13,13 +13,13 @@ class Wsf < Formula
   depends_on "rust" => :build
   depends_on "pandoc" => :build
   depends_on "openssl"
-  
+
   def install
     # export OPENSSL_INCLUDE_DIR=`/include
     # export OPENSSL_LIB_DIR=`brew --prefix openssl`/lib
     #ENV['OPENSSL_INCLUDE_DIR'] = "#{`brew --prefix openssl`}/include"
     #ENV['OPENSSL_LIB_DIR'] = "#{`brew --prefix openssl`}/lib"
-    system "make"    
+    system "make"
     bin.install "target/release/wsf"
     man1.install "wsf.1"
   end
