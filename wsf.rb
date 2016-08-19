@@ -1,6 +1,6 @@
 require "formula"
 
-$wsf_version = "0.1.4"
+$wsf_version = "0.1.5"
 
 class Wsf < Formula
   head "https://github.com/brianm/wsf.git"
@@ -8,7 +8,7 @@ class Wsf < Formula
   url "https://github.com/brianm/wsf/archive/wsf-#{$wsf_version}.tar.gz"
   version $wsf_version
   homepage "https://github.com/brianm/wsf"
-  sha256 "8914ec3b62ad0d760529982b4ab9b1778698c7f53c5295f0795f031328ea4ada"
+  sha256 "895afa3d4c1371f8b5b0cb57e4a361b00867b31960afc2c79942b673bdfbc7bb"
 
   depends_on "rust" => :build
   depends_on "pandoc" => :build
