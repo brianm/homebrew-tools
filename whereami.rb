@@ -1,6 +1,6 @@
 require "formula"
 
-$_version = "0.1"
+$_version = "0.2.0"
 $_group = "brianm"
 $_name = "whereami"
 
@@ -10,7 +10,7 @@ class Whereami < Formula
   url "https://github.com/#{$_group}/#{$_name}/archive/#{$_name}-#{$_version}.tar.gz"
   version $wsf_version
   homepage "https://github.com/#{$_group}/#{$_name}"
-  sha256 "6ab919830862ff2b34fb6ffb9af7c22646e6cfabb87c84ebfe689314f84612c6"
+  sha256 "7400ec0afaef6d7d445e665a82fb677e605e1d14e9fb69437f8a2c18dd10443b"
 
   def install
     system "make"
