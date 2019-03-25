@@ -1,6 +1,6 @@
 require "formula"
 
-$pkg_version = "1.1.8"
+$pkg_version = "1.1.9"
 $pkg_group = "brianm"
 $pkg_repo = "wsf"
 $pkg_tag = "#{$pkg_repo}-#{$pkg_version}"
@@ -11,7 +11,7 @@ class Wsf < Formula
   url "https://github.com/#{$pkg_group}/#{$pkg_repo}/archive/#{$pkg_tag}.tar.gz"
   version $pkg_version
   homepage "https://github.com/#{$pkg_group}/#{$pkg_repo}"
-  sha256 "af7ba3e764a5a9a0ce23362d42a5962917bba2694adfa27af3f3137ad86cf8b1"
+  sha256 "40bd0c7b1326906489892a7a989cb1e4e7fbd4bf4df609657f07b9d0a9c0d2a9"
 
   depends_on "rust" => :build
   depends_on "pandoc" => :build
