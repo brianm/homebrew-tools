@@ -1,6 +1,6 @@
 require "formula"
 
-$pkg_version = "0.1.0"
+$pkg_version = "0.2.0"
 $pkg_group = "brianm"
 $pkg_repo = "aqi"
 $pkg_tag = "#{$pkg_repo}-#{$pkg_version}"
@@ -11,7 +11,7 @@ class Aqi < Formula
   url "https://github.com/#{$pkg_group}/#{$pkg_repo}/archive/#{$pkg_tag}.tar.gz"
   version $pkg_version
   homepage "https://github.com/#{$pkg_group}/#{$pkg_repo}"
-  sha256 "8cba0264d1cf5451765bd1f691b0768f939a44bed85934b906ac6a38ea04c202"
+  sha256 "d1419eef4cae6b005e5005f6b60ee7dc762fd995a328752e0c19078bdae0c4bc"
 
   depends_on "rust" => :build
   depends_on "openssl"
