@@ -1,23 +1,19 @@
-require "formula"
-
-$pkg_version = "1.1.12"
-$pkg_group = "brianm"
-$pkg_repo = "wsf"
-$pkg_tag = "#{$pkg_repo}-#{$pkg_version}"
-
 class Wsf < Formula
-  head "https://github.com/#{$pkg_group}/#{$pkg_repo}.git"
-
-  url "https://github.com/#{$pkg_group}/#{$pkg_repo}/archive/#{$pkg_tag}.tar.gz"
-  version $pkg_version
-  homepage "https://github.com/#{$pkg_group}/#{$pkg_repo}"
+  desc "Washington State Ferry Schedule CLI"
+  homepage "https://github.com/brianm/wsf"
+  url "https://github.com/brianm/wsf/archive/refs/tags/wsf-1.1.12.tar.gz"
   sha256 "5d3a1c5406c848f0966cb27f663f814d365f5b8b498dd8c6a695c3230bc80d93"
+  license "Apache-2.0"
+  head "https://github.com/brianm/wsf.git"
 
   depends_on "rust" => :build
 
   def install
-    system "cargo build --release"
-    bin.install "target/release/wsf"
+    system "cargo", "install", *std_cargo_args
     man1.install "wsf.1"
+  end
+
+  test do
+    system bin/"wsf", "--help"
   end
 end
