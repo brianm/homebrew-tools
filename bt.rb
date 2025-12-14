@@ -1,8 +1,8 @@
 class Bt < Formula
   desc "Small task tracker for small projects"
   homepage "https://github.com/brianm/bt"
-  url "https://github.com/brianm/bt/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "b8ff9239506121d8af0984de6e78b044bf900eadda2e513cefaf1fba19e13161"
+  url "https://github.com/brianm/bt/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "6322a5b6601dd2c7f3465b0dc7f7b57d6d6bc845cc96c39290c6b591ec0be2fb"
   license "Apache-2.0"
   head "https://github.com/brianm/bt.git"
 
