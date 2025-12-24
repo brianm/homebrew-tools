@@ -1,8 +1,8 @@
 class Yatl < Formula
   desc "Small task tracker for small projects"
   homepage "https://github.com/brianm/yatl"
-  url "https://github.com/brianm/yatl/archive/refs/tags/v0.4.3.tar.gz"
-  sha256 "4b43f91be9281b60f65a0b5073362817242bcb6fa091b977c4d67f55208d0ee9"
+  url "https://github.com/brianm/yatl/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "7d0e5df375e81143147550e644c1c1fd36256a83b0d03b253f6071103d3810ab"
   license "Apache-2.0"
   head "https://github.com/brianm/yatl.git"
 
