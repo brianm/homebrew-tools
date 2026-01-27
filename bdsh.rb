@@ -1,8 +1,8 @@
 class Bdsh < Formula
   desc "Better Distributed Shell - run commands on multiple hosts with consensus view"
   homepage "https://github.com/brianm/bdsh"
-  url "https://github.com/brianm/bdsh/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "eba78f11df453bb8bcef52bfa7f8bdd0a3767ec9ca3c613e77c11890b6b98e69"
+  url "https://github.com/brianm/bdsh/archive/refs/tags/v0.1.4.tar.gz"
+  sha256 "3c2b5f6881321af97f7c79158701ee4c65d7c83bc6db9acc182069999c8caf27"
   license "Apache-2.0"
   head "https://github.com/brianm/bdsh.git"
 
