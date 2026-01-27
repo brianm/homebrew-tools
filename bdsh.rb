@@ -7,6 +7,7 @@ class Bdsh < Formula
   head "https://github.com/brianm/bdsh.git"
 
   depends_on "rust" => :build
+  depends_on "tmux"
 
   def install
     system "cargo", "install", *std_cargo_args
