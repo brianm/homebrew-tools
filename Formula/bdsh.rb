@@ -1,36 +1,36 @@
 class Bdsh < Formula
   desc "Run commands on multiple hosts simultaneously via SSH with consensus output view"
   homepage "https://github.com/brianm/bdsh"
-  version "0.2.1"
+  version "0.2.6"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/brianm/bdsh/releases/download/v0.2.1/bdsh-aarch64-apple-darwin.tar.xz"
-      sha256 "a9135d8ad49b5ac88b2da49d9fa827099f31071c4d8fce1d79c94731b1a3b8f4"
+      url "https://github.com/brianm/bdsh/releases/download/v0.2.6/bdsh-aarch64-apple-darwin.tar.xz"
+      sha256 "600080108453a7083de1dd7faa9f4a5c9b24bf160fd7355b156ab91a9291803a"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/brianm/bdsh/releases/download/v0.2.1/bdsh-x86_64-apple-darwin.tar.xz"
-      sha256 "5f6466f91d959f10b2130235104ecf9285fa5bcacf3ece82ec67f308d9007123"
+      url "https://github.com/brianm/bdsh/releases/download/v0.2.6/bdsh-x86_64-apple-darwin.tar.xz"
+      sha256 "fc688868dfd704d8b17f631d0a3b4fbb914d48ccb4b7bbea87dc9c9526738417"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/brianm/bdsh/releases/download/v0.2.1/bdsh-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "b53d363e6bb1f524d94ddca8772e24878f8edf6b7a6c9021df4fc1720e257aa2"
+      url "https://github.com/brianm/bdsh/releases/download/v0.2.6/bdsh-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "7deab20cb741b2f2a385dfd82d4fe9148adbef12bd39b048ce8b80036cda6833"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/brianm/bdsh/releases/download/v0.2.1/bdsh-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "d1f3a4a067a98c985a789c9846227740d220b6dc301b079b5d357fc26bf9cc7b"
+      url "https://github.com/brianm/bdsh/releases/download/v0.2.6/bdsh-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "9a30ad553bf417c2f2c7a81e0d0e7133204d517840c38ad3e579147aaecbe3c9"
     end
   end
   license "Apache-2.0"
   depends_on "tmux"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":      {},
+    "aarch64-apple-darwin": {},
     "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin":       {},
-    "x86_64-unknown-linux-gnu":  {},
-  }.freeze
+    "x86_64-apple-darwin": {},
+    "x86_64-unknown-linux-gnu": {}
+  }
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -39,7 +39,8 @@ class Bdsh < Formula
     "#{cpu}-#{os}"
   end
 
-  def install_binary_aliases!
+  def install
+    man1.install "doc/bdsh.1"_binary_aliases!
     BINARY_ALIASES[target_triple.to_sym].each do |source, dests|
       dests.each do |dest|
         bin.install_symlink bin/source.to_s => dest
@@ -48,10 +49,19 @@ class Bdsh < Formula
   end
 
   def install
-    bin.install "bdsh" if OS.mac? && Hardware::CPU.arm?
-    bin.install "bdsh" if OS.mac? && Hardware::CPU.intel?
-    bin.install "bdsh" if OS.linux? && Hardware::CPU.arm?
-    bin.install "bdsh" if OS.linux? && Hardware::CPU.intel?
+    man1.install "doc/bdsh.1"
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "bdsh"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "bdsh"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "bdsh"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "bdsh"
+    end
 
     install_binary_aliases!
 
