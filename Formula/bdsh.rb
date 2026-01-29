@@ -1,25 +1,25 @@
 class Bdsh < Formula
   desc "Run commands on multiple hosts simultaneously via SSH with consensus output view"
   homepage "https://github.com/brianm/bdsh"
-  version "0.2.8"
+  version "0.2.9"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/brianm/bdsh/releases/download/v0.2.8/bdsh-aarch64-apple-darwin.tar.xz"
-      sha256 "060cf90796c03ee2d49aaae49e43788228820ac1d514da862e0fe5540ac24ee2"
+      url "https://github.com/brianm/bdsh/releases/download/v0.2.9/bdsh-aarch64-apple-darwin.tar.xz"
+      sha256 "582e5582218d577de6e50a6ca9d7e487081b3ef297817216ed473d8b18d3acde"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/brianm/bdsh/releases/download/v0.2.8/bdsh-x86_64-apple-darwin.tar.xz"
-      sha256 "5605429b44b2e1fa584c581246153e3ce67d35e35cb8a8df6fd8a549373fd880"
+      url "https://github.com/brianm/bdsh/releases/download/v0.2.9/bdsh-x86_64-apple-darwin.tar.xz"
+      sha256 "a5eb0ebdd6e6846e0a1807ee2a96f8f323e1ad0cfce61a4baf52a3bedd2690df"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/brianm/bdsh/releases/download/v0.2.8/bdsh-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "9fa92311c6ab42475b022e1edd00bca75fc5b89d88a8228afbc87eb0bbf73c53"
+      url "https://github.com/brianm/bdsh/releases/download/v0.2.9/bdsh-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "c20085c0d27e577307cb3227148c36f3dabf0ff5a52704b9081a03bffef24aef"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/brianm/bdsh/releases/download/v0.2.8/bdsh-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "1ade0b65a3c0dd0dce0e767dc56324154f5cce505a32f39a4d1c757e7f3227e8"
+      url "https://github.com/brianm/bdsh/releases/download/v0.2.9/bdsh-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "3699cf330f79165443bbbd3453e261c59956f8b138175e08458ef6090cdd9dfb"
     end
   end
   license "Apache-2.0"
