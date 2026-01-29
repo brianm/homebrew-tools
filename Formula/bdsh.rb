@@ -1,25 +1,25 @@
 class Bdsh < Formula
   desc "Run commands on multiple hosts simultaneously via SSH with consensus output view"
   homepage "https://github.com/brianm/bdsh"
-  version "0.2.7"
+  version "0.2.8"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/brianm/bdsh/releases/download/v0.2.7/bdsh-aarch64-apple-darwin.tar.xz"
-      sha256 "6e8240ceb6bd15427450bbac7c3ea66d55248d5d8b35d9c165fc8190332a401d"
+      url "https://github.com/brianm/bdsh/releases/download/v0.2.8/bdsh-aarch64-apple-darwin.tar.xz"
+      sha256 "060cf90796c03ee2d49aaae49e43788228820ac1d514da862e0fe5540ac24ee2"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/brianm/bdsh/releases/download/v0.2.7/bdsh-x86_64-apple-darwin.tar.xz"
-      sha256 "1288cd67e9621af3beb906b2e877bb6826224e96d1a5fed676da29987ef2fb69"
+      url "https://github.com/brianm/bdsh/releases/download/v0.2.8/bdsh-x86_64-apple-darwin.tar.xz"
+      sha256 "5605429b44b2e1fa584c581246153e3ce67d35e35cb8a8df6fd8a549373fd880"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/brianm/bdsh/releases/download/v0.2.7/bdsh-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "3c11702b6589aafd0396d3f2f1071e0636e9f2a9fe45ac198a0a9ef850f35c4d"
+      url "https://github.com/brianm/bdsh/releases/download/v0.2.8/bdsh-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "9fa92311c6ab42475b022e1edd00bca75fc5b89d88a8228afbc87eb0bbf73c53"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/brianm/bdsh/releases/download/v0.2.7/bdsh-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "169fe2b5afeb7fc089cfe15a081fee419699132d60ee5782cc090b4402205328"
+      url "https://github.com/brianm/bdsh/releases/download/v0.2.8/bdsh-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "1ade0b65a3c0dd0dce0e767dc56324154f5cce505a32f39a4d1c757e7f3227e8"
     end
   end
   license "Apache-2.0"
@@ -48,7 +48,7 @@ class Bdsh < Formula
   end
 
   def install
-    man1.install "doc/bdsh.1"
+    man1.install "bdsh.1"
     bin.install "bdsh" if OS.mac? && Hardware::CPU.arm?
     bin.install "bdsh" if OS.mac? && Hardware::CPU.intel?
     bin.install "bdsh" if OS.linux? && Hardware::CPU.arm?
