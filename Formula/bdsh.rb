@@ -1,26 +1,26 @@
 class Bdsh < Formula
   desc "Run commands on multiple hosts via SSH with consensus view"
   homepage "https://github.com/brianm/bdsh"
-  version "0.2.14"
+  version "0.2.15"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/brianm/bdsh/releases/download/v0.2.14/bdsh-0.2.14-aarch64-apple-darwin.tar.gz"
-      sha256 "b2e3333d5270cca8e9bcf1d77b4b3c166cb3c109091eab5b783ffa9ba49dc290"
+      url "https://github.com/brianm/bdsh/releases/download/v0.2.15/bdsh-0.2.15-aarch64-apple-darwin.tar.gz"
+      sha256 "47f54ad3b5f1080ef705a203edf80aa68343202678f2a0495f7a796dab6e8d29"
     else
-      url "https://github.com/brianm/bdsh/releases/download/v0.2.14/bdsh-0.2.14-x86_64-apple-darwin.tar.gz"
-      sha256 "bc52daa2651cc965d3cf76296b0a387248ad4af29649c2a8825232bd0c4bcaa8"
+      url "https://github.com/brianm/bdsh/releases/download/v0.2.15/bdsh-0.2.15-x86_64-apple-darwin.tar.gz"
+      sha256 "a28c34790832853dad72cc921667a02b1ad77439a1849e066b8bf7d63b22ed1b"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/brianm/bdsh/releases/download/v0.2.14/bdsh-0.2.14-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "a6310dbfa44ab8af9e769aceb0e3a696b9e794d5cc1f7541c60201a67a54b77c"
+      url "https://github.com/brianm/bdsh/releases/download/v0.2.15/bdsh-0.2.15-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "7f53cbdc29866d93fdcc522fb4cc61d7f5961105938a85664ac00e98d30f2d51"
     else
-      url "https://github.com/brianm/bdsh/releases/download/v0.2.14/bdsh-0.2.14-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "0f2b5d89aa24a0f74d105f4df3bf6a3da961daf69a62415d6bacd0c55edc4167"
+      url "https://github.com/brianm/bdsh/releases/download/v0.2.15/bdsh-0.2.15-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "5e799a60369e4c173d725221e140e87e4fb1bbc62a5aa265ee3764ec7037a7de"
     end
   end
 
