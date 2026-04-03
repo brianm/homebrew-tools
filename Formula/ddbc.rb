@@ -67,7 +67,20 @@ class Ddbc < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3.13")
+
+    # playwright only ships wheels (no sdist), so install it separately
+    # with --no-deps to allow the binary wheel
+    resource("playwright").stage do
+      venv.pip_install Dir["*.whl"].first
+    end
+
+    # install all other resources from source as usual
+    resources.reject { |r| r.name == "playwright" }.each do |r|
+      venv.pip_install_and_link r
+    end
+
+    venv.pip_install_and_link buildpath
   end
 
   def post_install
